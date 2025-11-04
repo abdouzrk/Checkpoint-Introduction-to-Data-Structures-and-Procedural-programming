@@ -1,0 +1,48 @@
+Algorithme Somme_Distincte
+Variables
+   A, B : Tableau[1..100] d'Entier
+   n1, n2, i, j, somme : Entier
+   existe : Booleen
+Début
+   somme ← 0
+
+   Ecrire("Donner le nombre d'elements du 1er ensemble : ")
+   Lire(n1)
+   Pour i ← 1 à n1 Faire
+      Lire(A[i])
+   FinPour
+
+   Ecrire("Donner le nombre d'elements du 2ème ensemble : ")
+   Lire(n2)
+   Pour i ← 1 à n2 Faire
+      Lire(B[i])
+   FinPour
+
+   // Vérifier les éléments de A
+   Pour i ← 1 à n1 Faire
+      existe ← Faux
+      Pour j ← 1 à n2 Faire
+         Si A[i] = B[j] Alors
+            existe ← Vrai
+         FinSi
+      FinPour
+      Si existe = Faux Alors
+         somme ← somme + A[i]
+      FinSi
+   FinPour
+
+   // Vérifier les éléments de B
+   Pour i ← 1 à n2 Faire
+      existe ← Faux
+      Pour j ← 1 à n1 Faire
+         Si B[i] = A[j] Alors
+            existe ← Vrai
+         FinSi
+      FinPour
+      Si existe = Faux Alors
+         somme ← somme + B[i]
+      FinSi
+   FinPour
+
+   Ecrire("Somme des elements distincts = ", somme)
+FinAlgorithme

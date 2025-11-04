@@ -1,0 +1,34 @@
+Fonction produit_scalaire(v1, v2 : Tableau[1..100] d'Entier ; n : Entier) : Entier
+Variables
+   i, ps : Entier
+Début
+   ps ← 0
+   Pour i ← 1 à n Faire
+      ps ← ps + v1[i] * v2[i]
+   FinPour
+   Retourner ps
+FinFonction
+
+
+Algorithme Orthogonalite_Fonction
+Variables
+   v1, v2 : Tableau[1..100] d'Entier
+   n, i, ps : Entier
+Début
+   Ecrire("Dimension du vecteur : ")
+   Lire(n)
+   Pour i ← 1 à n Faire
+      Lire(v1[i])
+   FinPour
+   Pour i ← 1 à n Faire
+      Lire(v2[i])
+   FinPour
+
+   ps ← produit_scalaire(v1, v2, n)
+
+   Si ps = 0 Alors
+      Ecrire("Les vecteurs sont orthogonaux.")
+   Sinon
+      Ecrire("Les vecteurs ne sont pas orthogonaux.")
+   FinSi
+FinAlgorithme
